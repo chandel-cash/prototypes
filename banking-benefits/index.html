@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banking Benefits</title>
+    <link rel="stylesheet" href="./assets/styles.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div class="flex flex-col min-h-screen bg-[#F2F2F7]">
+        <!-- iOS Status Bar -->
+        <div class="bg-white h-11 flex items-center justify-between px-4">
+            <div class="text-sm font-medium">12:17</div>
+            <div class="flex items-center gap-1">
+                <div class="signal-bars">
+                    <div class="signal-bar signal-bar-1"></div>
+                    <div class="signal-bar signal-bar-2"></div>
+                    <div class="signal-bar signal-bar-3"></div>
+                    <div class="signal-bar signal-bar-4"></div>
+                </div>
+                <div class="ml-1 text-xs font-medium">5G</div>
+                <div class="battery-indicator">78%</div>
+            </div>
+        </div>
+
+        <!-- Navigation Bar -->
+        <div class="nav-bar">
+            <button class="absolute left-2 flex items-center text-[#007AFF]">
+                <i data-lucide="chevron-left" class="h-5 w-5 text-[#007AFF]"></i>
+                <span>Back</span>
+            </button>
+            <h1 class="text-[17px] font-semibold">Banking Benefits</h1>
+        </div>
+
+        <!-- Main Content -->
+        <main class="flex-1 px-4 py-6">
+            <!-- Status -->
+            <div class="flex items-center gap-2 mb-4">
+                <i data-lucide="check-circle-2" class="h-5 w-5 text-[#34C759] fill-[#34C759]"></i>
+                <span class="text-base font-medium">Active through 4/30</span>
+            </div>
+
+            <p class="text-[15px] text-[#8E8E93] mb-6">
+                Complete either method to earn benefits for the following month
+            </p>
+
+            <!-- Direct Deposit Card -->
+            <a href="./direct-deposit.html">
+                <div class="benefit-card border border-[#34C759]">
+                    <div class="p-4">
+                        <div class="flex justify-between items-center mb-3">
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="arrow-down-circle" class="h-5 w-5 text-[#34C759]"></i>
+                                <span class="font-semibold text-[17px]">Direct deposit</span>
+                            </div>
+                            <span class="text-[#34C759] text-[13px]">• Closest to earning</span>
+                        </div>
+
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill bg-[#34C759]" style="width: 50%"></div>
+                        </div>
+
+                        <div class="mt-2 mb-2">
+                            <span class="text-[15px]">$150 / $300 this month</span>
+                        </div>
+
+                        <p class="text-[13px] text-[#8E8E93]">
+                            Deposit $150 more to reach your monthly goal
+                        </p>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Card Spend Card -->
+            <a href="./card-spend.html">
+                <div class="benefit-card">
+                    <div class="p-4">
+                        <div class="flex justify-between items-center mb-3">
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="credit-card" class="h-5 w-5"></i>
+                                <span class="font-semibold text-[17px]">Card spend</span>
+                            </div>
+                        </div>
+
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill bg-[#007AFF]" style="width: 44.6%"></div>
+                        </div>
+
+                        <div class="mt-2 mb-2">
+                            <span class="text-[15px]">$223 / $500 this month</span>
+                        </div>
+
+                        <p class="text-[13px] text-[#8E8E93]">
+                            Spend $277 more to reach your monthly goal
+                        </p>
+                    </div>
+                </div>
+            </a>
+
+            <!-- How it works -->
+            <div class="benefit-card">
+                <div class="p-4">
+                    <h2 class="font-semibold text-[17px] mb-3">How it works</h2>
+                    <ul class="space-y-3">
+                        <li class="flex gap-2">
+                            <i data-lucide="check-circle-2" class="h-5 w-5 text-[#34C759] shrink-0"></i>
+                            <span class="text-[15px] text-[#3A3A3C]">
+                                Meet either the direct deposit or card spend requirement
+                            </span>
+                        </li>
+                        <li class="flex gap-2">
+                            <i data-lucide="check-circle-2" class="h-5 w-5 text-[#34C759] shrink-0"></i>
+                            <span class="text-[15px] text-[#3A3A3C]">
+                                Benefits are activated for the following month
+                            </span>
+                        </li>
+                        <li class="flex gap-2">
+                            <i data-lucide="check-circle-2" class="h-5 w-5 text-[#34C759] shrink-0"></i>
+                            <span class="text-[15px] text-[#3A3A3C]">
+                                Continue meeting requirements to maintain benefits
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Your benefits -->
+            <h2 class="text-[20px] font-bold mb-4">Your benefits</h2>
+
+            <!-- Segment Control -->
+            <div class="segment-control">
+                <button class="segment-button active" onclick="switchTab('earned')">Earned</button>
+                <button class="segment-button" onclick="switchTab('included')">Included</button>
+            </div>
+
+            <!-- Benefits List -->
+            <div id="earned-benefits">
+                <h2 class="text-[17px] font-semibold mb-4">Access to cash</h2>
+                <div class="benefit-card">
+                    <div class="flex items-center justify-between py-3.5 px-4 border-b border-[#E9E9EB]">
+                        <span class="font-medium text-[17px]">Borrow up to $1,000</span>
+                        <div class="flex items-center gap-2">
+                            <div class="h-2 w-2 rounded-full bg-[#34C759]"></div>
+                            <i data-lucide="chevron-right" class="h-5 w-5 text-[#C7C7CC]"></i>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between py-3.5 px-4 border-b border-[#E9E9EB]">
+                        <span class="font-medium text-[17px]">Pay in 4 up to $1,000</span>
+                        <div class="flex items-center gap-2">
+                            <div class="h-2 w-2 rounded-full bg-[#34C759]"></div>
+                            <i data-lucide="chevron-right" class="h-5 w-5 text-[#C7C7CC]"></i>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between py-3.5 px-4">
+                        <span class="font-medium text-[17px]">Free overdraft coverage</span>
+                        <div class="flex items-center gap-2">
+                            <div class="h-2 w-2 rounded-full bg-[#34C759]"></div>
+                            <i data-lucide="chevron-right" class="h-5 w-5 text-[#C7C7CC]"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="included-benefits" style="display: none;">
+                <h2 class="text-[17px] font-semibold mb-4">Additional benefits</h2>
+                <div class="benefit-card">
+                    <div class="flex items-center justify-between py-3.5 px-4 border-b border-[#E9E9EB]">
+                        <span class="font-medium text-[17px]">Lorem ipsum dolor sit amet</span>
+                        <div class="flex items-center gap-2">
+                            <div class="h-2 w-2 rounded-full bg-[#34C759]"></div>
+                            <i data-lucide="chevron-right" class="h-5 w-5 text-[#C7C7CC]"></i>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between py-3.5 px-4 border-b border-[#E9E9EB]">
+                        <span class="font-medium text-[17px]">Consectetur adipiscing elit</span>
+                        <div class="flex items-center gap-2">
+                            <div class="h-2 w-2 rounded-full bg-[#34C759]"></div>
+                            <i data-lucide="chevron-right" class="h-5 w-5 text-[#C7C7CC]"></i>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between py-3.5 px-4 border-b border-[#E9E9EB]">
+                        <span class="font-medium text-[17px]">Sed do eiusmod tempor</span>
+                        <div class="flex items-center gap-2">
+                            <div class="h-2 w-2 rounded-full bg-[#34C759]"></div>
+                            <i data-lucide="chevron-right" class="h-5 w-5 text-[#C7C7CC]"></i>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between py-3.5 px-4">
+                        <span class="font-medium text-[17px]">Ut labore et dolore magna</span>
+                        <div class="flex items-center gap-2">
+                            <div class="h-2 w-2 rounded-full bg-[#34C759]"></div>
+                            <i data-lucide="chevron-right" class="h-5 w-5 text-[#C7C7CC]"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Tab switching functionality
+        function switchTab(tab) {
+            const earnedTab = document.querySelector('#earned-benefits');
+            const includedTab = document.querySelector('#included-benefits');
+            const [earnedBtn, includedBtn] = document.querySelectorAll('.segment-button');
+
+            if (tab === 'earned') {
+                earnedTab.style.display = 'block';
+                includedTab.style.display = 'none';
+                earnedBtn.classList.add('active');
+                includedBtn.classList.remove('active');
+            } else {
+                earnedTab.style.display = 'none';
+                includedTab.style.display = 'block';
+                earnedBtn.classList.remove('active');
+                includedBtn.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>

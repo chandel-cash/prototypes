@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Spend</title>
+    <link rel="stylesheet" href="./assets/styles.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div class="flex flex-col min-h-screen bg-white">
+        <!-- iOS Status Bar -->
+        <div class="bg-white h-11 flex items-center justify-between px-4">
+            <div class="text-sm font-medium">11:43</div>
+            <div class="flex items-center gap-1">
+                <div class="signal-bars">
+                    <div class="signal-bar signal-bar-1"></div>
+                    <div class="signal-bar signal-bar-2"></div>
+                    <div class="signal-bar signal-bar-3"></div>
+                    <div class="signal-bar signal-bar-4"></div>
+                </div>
+                <div class="ml-1 text-xs font-medium">5G</div>
+                <div class="battery-indicator">78%</div>
+            </div>
+        </div>
+
+        <!-- Header -->
+        <div class="px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center">
+                <a href="./index.html" class="mr-2">
+                    <i data-lucide="chevron-left" class="h-6 w-6 text-black"></i>
+                </a>
+                <h1 class="text-3xl font-bold">Card Spend</h1>
+            </div>
+            <div class="h-9 w-9 rounded-full bg-gray-200"></div>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="px-4 py-3">
+            <div class="bg-[#F2F2F7] rounded-full flex items-center px-4 py-2">
+                <i data-lucide="search" class="h-5 w-5 text-[#8E8E93] mr-2"></i>
+                <input type="text" placeholder="Search transactions" class="bg-transparent border-none outline-none flex-1 text-[15px] placeholder-[#8E8E93]">
+            </div>
+        </div>
+
+        <!-- Transactions -->
+        <div class="flex-1">
+            <div class="px-4 py-2 border-b border-[#E9E9EB]">
+                <h2 class="text-2xl font-bold">This month</h2>
+            </div>
+
+            <div class="transactions-list">
+                <!-- Transaction items will be dynamically populated -->
+            </div>
+        </div>
+
+        <!-- Bottom Total -->
+        <div class="border-t border-[#E9E9EB] py-4 px-6 flex items-center">
+            <div class="text-2xl font-bold text-[#8E8E93]">$223.00</div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Sample transaction data
+        const transactions = [
+            {
+                id: 1,
+                name: "Whole Foods Market",
+                description: "Groceries",
+                date: "Yesterday at 2:15 PM",
+                amount: 78.35,
+                icon: "shopping-cart",
+                color: "bg-green-500",
+                total: 223.00
+            },
+            {
+                id: 2,
+                name: "Starbucks",
+                description: "Coffee",
+                date: "Yesterday at 9:30 AM",
+                amount: 5.45,
+                icon: "coffee",
+                color: "bg-blue-500",
+                total: 144.65
+            },
+            {
+                id: 3,
+                name: "Amazon",
+                description: "Online Shopping",
+                date: "Apr 12",
+                amount: 42.99,
+                icon: "shopping-cart",
+                color: "bg-orange-500",
+                total: 139.20
+            },
+            {
+                id: 4,
+                name: "Uber",
+                description: "Transportation",
+                date: "Apr 10 at 8:45 PM",
+                amount: 18.75,
+                icon: "dollar-sign",
+                color: "bg-purple-500",
+                total: 96.21
+            },
+            {
+                id: 5,
+                name: "Chipotle",
+                description: "Restaurant",
+                date: "Apr 9 at 12:30 PM",
+                amount: 12.50,
+                icon: "utensils",
+                color: "bg-red-500",
+                total: 77.46
+            },
+            {
+                id: 6,
+                name: "Target",
+                description: "Retail",
+                date: "Apr 7",
+                amount: 64.96,
+                icon: "shopping-cart",
+                color: "bg-red-500",
+                total: 64.96
+            }
+        ];
+
+        // Function to create transaction elements
+        function createTransactionElements() {
+            const container = document.querySelector('.transactions-list');
+            transactions.forEach(transaction => {
+                const element = document.createElement('a');
+                element.href = `#transaction-${transaction.id}`;
+                element.innerHTML = `
+                    <div class="flex items-center px-4 py-4 border-b border-[#E9E9EB]">
+                        <div class="${transaction.color} h-12 w-12 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                            <i data-lucide="${transaction.icon}" class="h-6 w-6 text-white"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="font-semibold text-[17px]">${transaction.name}</div>
+                            <div class="text-[15px] text-[#8E8E93]">${transaction.description}</div>
+                            <div class="text-[13px] text-[#8E8E93]">${transaction.date}</div>
+                        </div>
+                        <div class="flex flex-col items-end">
+                            <div class="font-semibold text-[17px]">$${transaction.amount.toFixed(2)}</div>
+                            <div class="text-[13px] text-[#8E8E93]">Total: $${transaction.total.toFixed(2)}</div>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(element);
+            });
+            // Reinitialize icons for the new elements
+            lucide.createIcons();
+        }
+
+        // Initialize transactions
+        createTransactionElements();
+
+        // Search functionality
+        const searchInput = document.querySelector('input[type="text"]');
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase();
+            const container = document.querySelector('.transactions-list');
+            container.innerHTML = '';
+            
+            const filteredTransactions = transactions.filter(transaction => 
+                transaction.name.toLowerCase().includes(query) ||
+                transaction.description.toLowerCase().includes(query)
+            );
+
+            if (filteredTransactions.length === 0) {
+                container.innerHTML = `
+                    <div class="px-4 py-8 text-center text-[#8E8E93]">
+                        No transactions found matching "${query}"
+                    </div>
+                `;
+                return;
+            }
+
+            let runningTotal = 0;
+            filteredTransactions.forEach(transaction => {
+                runningTotal += transaction.amount;
+                transaction.total = runningTotal;
+            });
+
+            filteredTransactions.forEach(transaction => {
+                const element = document.createElement('a');
+                element.href = `#transaction-${transaction.id}`;
+                element.innerHTML = `
+                    <div class="flex items-center px-4 py-4 border-b border-[#E9E9EB]">
+                        <div class="${transaction.color} h-12 w-12 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                            <i data-lucide="${transaction.icon}" class="h-6 w-6 text-white"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="font-semibold text-[17px]">${transaction.name}</div>
+                            <div class="text-[15px] text-[#8E8E93]">${transaction.description}</div>
+                            <div class="text-[13px] text-[#8E8E93]">${transaction.date}</div>
+                        </div>
+                        <div class="flex flex-col items-end">
+                            <div class="font-semibold text-[17px]">$${transaction.amount.toFixed(2)}</div>
+                            <div class="text-[13px] text-[#8E8E93]">Total: $${transaction.total.toFixed(2)}</div>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(element);
+            });
+            
+            // Update total
+            document.querySelector('.text-2xl.font-bold.text-[#8E8E93]').textContent = 
+                `$${runningTotal.toFixed(2)}`;
+            
+            // Reinitialize icons for the new elements
+            lucide.createIcons();
+        });
+    </script>
+</body>
+</html>
