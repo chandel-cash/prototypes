@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Afterpay Media Network - Prototype Instructions</title>
+    <link rel="stylesheet" href="https://square-fonts-production-f.squarecdn.com/square-sans.min.css">
+    <style>
+        :root {
+            /* Colors */
+            --color-blue: #006aff;
+            --color-blue-dark: #05c;
+            --color-white: #fff;
+            --color-gray-03: #f7f7f7;
+            --color-gray-05: #f2f2f2;
+            --color-gray-13: #e0e0e0;
+            --color-gray-15: #d9d9d9;
+            --color-gray-30: #b3b3b3;
+            --color-gray-55: #737373;
+            --color-gray-75: #414141;
+            --color-gray-80: #333;
+            --color-gray-90: #1a1a1a;
+            --color-gray-93: #121212;
+            --color-gray-99: #030303;
+            --color-black: var(--color-gray-99);
+
+            /* Fonts */
+            --font-family-base: "Square Sans Text VF", "Square Sans Text", Helvetica, Arial, sans-serif;
+            --font-family-display: "Square Sans Display VF", "Square Sans Display", Helvetica, Arial, sans-serif;
+            
+            /* Font sizes */
+            --font-size-12: 1.2rem;
+            --font-size-14: 1.4rem;
+            --font-size-16: 1.6rem;
+            --font-size-18: 1.8rem;
+            --font-size-20: 2rem;
+            --font-size-24: 2.4rem;
+            --font-size-28: 2.8rem;
+            --font-size-34: 3.4rem;
+            --font-size-40: 4rem;
+            
+            /* Line heights */
+            --line-height-18: 1.8rem;
+            --line-height-21: 2.1rem;
+            --line-height-24: 2.4rem;
+            --line-height-28: 2.8rem;
+            --line-height-30: 3rem;
+            --line-height-34: 3.4rem;
+            --line-height-38: 3.8rem;
+            
+            /* Font weights */
+            --font-weight-regular: 400;
+            --font-weight-medium: 500;
+            --font-weight-semibold: 600;
+            --font-weight-bold: 700;
+            
+            /* Spacing */
+            --space-10: 1rem;
+            --space-20: 2rem;
+            --space-30: 3rem;
+            --space-40: 4rem;
+            --space-60: 6rem;
+            
+            /* Container widths */
+            --container-width-small: 680px;
+            --container-width-medium: 960px;
+        }
+
+        html {
+            font-size: 62.5%;
+            box-sizing: border-box;
+        }
+
+        *, *:before, *:after {
+            box-sizing: inherit;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: var(--font-family-base);
+            font-size: var(--font-size-16);
+            line-height: var(--line-height-24);
+            color: var(--color-gray-90);
+            background-color: var(--color-white);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: var(--container-width-small);
+            margin: 0 auto;
+            padding: 0 var(--space-20);
+        }
+
+        .header {
+            background-color: var(--color-white);
+            border-bottom: 1px solid var(--color-gray-15);
+            padding: var(--space-20) 0;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            height: 50px;
+        }
+
+        .main {
+            padding: var(--space-60) 0;
+        }
+
+        .section {
+            margin-bottom: var(--space-40);
+        }
+
+        h1 {
+            font-family: var(--font-family-display);
+            font-size: var(--font-size-34);
+            line-height: var(--line-height-38);
+            font-weight: var(--font-weight-regular);
+            margin: 0 0 var(--space-20) 0;
+        }
+
+        h2 {
+            font-family: var(--font-family-display);
+            font-size: var(--font-size-24);
+            line-height: var(--line-height-30);
+            font-weight: var(--font-weight-regular);
+            margin: var(--space-30) 0 var(--space-20) 0;
+        }
+
+        p {
+            margin: var(--space-20) 0;
+        }
+
+        .button {
+            display: inline-block;
+            font-weight: var(--font-weight-medium);
+            text-align: center;
+            vertical-align: middle;
+            cursor: pointer;
+            padding: 12px 24px;
+            font-size: var(--font-size-16);
+            line-height: var(--line-height-24);
+            border-radius: 6px;
+            transition: all 0.2s ease-in-out;
+            text-decoration: none;
+            margin-right: var(--space-10);
+            margin-bottom: var(--space-10);
+        }
+
+        .button-primary {
+            background-color: var(--color-blue);
+            color: var(--color-white);
+            border: 1px solid var(--color-blue);
+        }
+
+        .button-primary:hover {
+            background-color: var(--color-blue-dark);
+            border-color: var(--color-blue-dark);
+        }
+
+        .button-secondary {
+            background-color: var(--color-white);
+            color: var(--color-blue);
+            border: 1px solid var(--color-blue);
+        }
+
+        .button-secondary:hover {
+            background-color: var(--color-gray-03);
+        }
+
+        .footer {
+            background-color: var(--color-gray-05);
+            padding: var(--space-40) 0;
+            margin-top: var(--space-60);
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-20);
+        }
+
+        .footer-links a {
+            color: var(--color-gray-55);
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: var(--color-gray-75);
+        }
+
+        .flow {
+            margin-top: var(--space-40);
+        }
+
+        .flow-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: var(--space-20);
+        }
+
+        .flow-number {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 30px;
+            height: 30px;
+            background-color: var(--color-blue);
+            color: var(--color-white);
+            border-radius: 50%;
+            margin-right: var(--space-10);
+            font-weight: var(--font-weight-bold);
+        }
+
+        .flow-text {
+            flex: 1;
+        }
+
+        .flow-arrow {
+            display: block;
+            margin-left: 15px;
+            margin-bottom: var(--space-20);
+            color: var(--color-gray-55);
+        }
+
+        code {
+            background-color: var(--color-gray-05);
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: var(--font-size-14);
+        }
+
+        .file-list {
+            background-color: var(--color-gray-03);
+            padding: var(--space-20);
+            border-radius: 8px;
+            margin: var(--space-20) 0;
+        }
+
+        .file-list ul {
+            margin: 0;
+            padding-left: var(--space-20);
+        }
+
+        .file-list li {
+            margin-bottom: var(--space-10);
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container header-content">
+            <a href="#">
+                <img src="https://cdn.logojoy.com/wp-content/uploads/20220503143620/square-logo-600x333.png" alt="Square" class="logo">
+            </a>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <section class="section">
+                <h1>Afterpay Media Network Opt-Out Prototype</h1>
+                <p>This prototype demonstrates the user flow for opting out of the Afterpay Media Network (AMN) as requested by the Block Privacy Counsel. The prototype follows Square's design style and implements the requirements outlined in the Google Slides document.</p>
+            </section>
+
+            <section class="section">
+                <h2>How to Use This Prototype</h2>
+                <p>To experience the complete user flow, start with the simulated Square homepage and follow these steps:</p>
+                
+                <div class="flow">
+                    <div class="flow-item">
+                        <div class="flow-number">1</div>
+                        <div class="flow-text">Open <code>square-homepage.html</code> in your browser</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    
+                    <div class="flow-item">
+                        <div class="flow-number">2</div>
+                        <div class="flow-text">Scroll to the footer and click either "Your Privacy Choices" or "Do Not Share My Personal Information" link</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    
+                    <div class="flow-item">
+                        <div class="flow-number">3</div>
+                        <div class="flow-text">On the opt-out landing page, click the "Customer Opt-Out" button</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    
+                    <div class="flow-item">
+                        <div class="flow-number">4</div>
+                        <div class="flow-text">Fill out the form and click "Submit Opt-Out Request"</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    
+                    <div class="flow-item">
+                        <div class="flow-number">5</div>
+                        <div class="flow-text">View the confirmation page</div>
+                    </div>
+                </div>
+
+                <div class="buttons">
+                    <a href="square-homepage.html" class="button button-primary">Start Prototype</a>
+                    <a href="amn-opt-out-prototype.html" class="button button-secondary">View Option 1 (Do Not Share)</a>
+                    <a href="amn-opt-out-prototype-alt.html" class="button button-secondary">View Option 2 (Your Privacy Choices)</a>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Files Included</h2>
+                <div class="file-list">
+                    <ul>
+                        <li><strong>square-homepage.html</strong> - Simulated Square homepage with footer links</li>
+                        <li><strong>amn-opt-out-prototype.html</strong> - Main landing page for the opt-out process (Option 1)</li>
+                        <li><strong>amn-opt-out-prototype-alt.html</strong> - Alternative design with separate links (Option 2)</li>
+                        <li><strong>customer-opt-out-form.html</strong> - Form for customers to submit their opt-out request</li>
+                        <li><strong>opt-out-confirmation.html</strong> - Confirmation page shown after form submission</li>
+                        <li><strong>square-logo.svg</strong> - Square logo for the prototype</li>
+                        <li><strong>prototype-script.js</strong> - JavaScript to connect the prototype pages</li>
+                        <li><strong>index.html</strong> - This instructions page</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Implementation Notes</h2>
+                <p>This is a static HTML/CSS prototype. In a real implementation, the forms would submit data to a server and the design would be integrated with Square's existing website infrastructure.</p>
+                <p>The prototype demonstrates both design options from the slides:</p>
+                <ol>
+                    <li>Option 1: Single "Do Not Share My Personal Information" link</li>
+                    <li>Option 2: Separate "Cookie Settings" and "Your Privacy Choices" links</li>
+                </ol>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <p>&copy; 2025 Block, Inc. | Prototype created for Square</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

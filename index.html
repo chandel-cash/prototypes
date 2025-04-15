@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Square Prototypes</title>
+    <link rel="stylesheet" href="https://square-fonts-production-f.squarecdn.com/square-sans.min.css">
+    <style>
+        :root {
+            --color-blue: #006aff;
+            --color-blue-dark: #05c;
+            --color-white: #fff;
+            --color-gray-05: #f2f2f2;
+            --color-gray-15: #d9d9d9;
+            --color-gray-90: #1a1a1a;
+            
+            --font-family-base: "Square Sans Text VF", "Square Sans Text", Helvetica, Arial, sans-serif;
+            --font-family-display: "Square Sans Display VF", "Square Sans Display", Helvetica, Arial, sans-serif;
+        }
+
+        html {
+            font-size: 62.5%;
+            box-sizing: border-box;
+        }
+
+        *, *:before, *:after {
+            box-sizing: inherit;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: var(--font-family-base);
+            font-size: 1.6rem;
+            line-height: 1.5;
+            color: var(--color-gray-90);
+            background-color: var(--color-white);
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .header {
+            background-color: var(--color-white);
+            border-bottom: 1px solid var(--color-gray-15);
+            padding: 2rem 0;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            height: 50px;
+        }
+
+        .main {
+            padding: 6rem 0;
+        }
+
+        h1 {
+            font-family: var(--font-family-display);
+            font-size: 3.4rem;
+            margin: 0 0 2rem 0;
+            font-weight: 400;
+        }
+
+        .prototype-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .prototype-card {
+            background: var(--color-white);
+            border: 1px solid var(--color-gray-15);
+            border-radius: 8px;
+            padding: 2rem;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .prototype-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .prototype-card h2 {
+            font-family: var(--font-family-display);
+            font-size: 2rem;
+            margin: 0 0 1rem 0;
+            font-weight: 400;
+        }
+
+        .prototype-card p {
+            margin: 0 0 2rem 0;
+            color: #666;
+        }
+
+        .prototype-card a {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: var(--color-blue);
+            color: var(--color-white);
+            text-decoration: none;
+            border-radius: 6px;
+            transition: background-color 0.2s ease-in-out;
+        }
+
+        .prototype-card a:hover {
+            background-color: var(--color-blue-dark);
+        }
+
+        .footer {
+            background-color: var(--color-gray-05);
+            padding: 4rem 0;
+            margin-top: 6rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container header-content">
+            <img src="https://cdn.logojoy.com/wp-content/uploads/20220503143620/square-logo-600x333.png" alt="Square" class="logo">
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <h1>Square Prototypes</h1>
+            
+            <div class="prototype-grid">
+                <div class="prototype-card">
+                    <h2>AMN Opt-Out Flow</h2>
+                    <p>Prototype for the Afterpay Media Network opt-out process, including multiple design options and complete user flow.</p>
+                    <a href="amn-opt-out/">View Prototype</a>
+                </div>
+                
+                <!-- Add new prototype cards here as they're created -->
+                
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Block, Inc.</p>
+        </div>
+    </footer>
+</body>
+</html>

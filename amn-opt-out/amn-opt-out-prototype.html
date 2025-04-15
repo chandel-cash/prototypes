@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Afterpay Media Network - Opt-Out | Square</title>
+    <link rel="stylesheet" href="https://square-fonts-production-f.squarecdn.com/square-sans.min.css">
+    <style>
+        :root {
+            /* Colors */
+            --color-blue: #006aff;
+            --color-blue-dark: #05c;
+            --color-white: #fff;
+            --color-gray-03: #f7f7f7;
+            --color-gray-05: #f2f2f2;
+            --color-gray-13: #e0e0e0;
+            --color-gray-15: #d9d9d9;
+            --color-gray-30: #b3b3b3;
+            --color-gray-55: #737373;
+            --color-gray-75: #414141;
+            --color-gray-80: #333;
+            --color-gray-90: #1a1a1a;
+            --color-gray-93: #121212;
+            --color-gray-99: #030303;
+            --color-black: var(--color-gray-99);
+
+            /* Fonts */
+            --font-family-base: "Square Sans Text VF", "Square Sans Text", Helvetica, Arial, sans-serif;
+            --font-family-display: "Square Sans Display VF", "Square Sans Display", Helvetica, Arial, sans-serif;
+            
+            /* Font sizes */
+            --font-size-12: 1.2rem;
+            --font-size-14: 1.4rem;
+            --font-size-16: 1.6rem;
+            --font-size-18: 1.8rem;
+            --font-size-20: 2rem;
+            --font-size-24: 2.4rem;
+            --font-size-28: 2.8rem;
+            --font-size-34: 3.4rem;
+            --font-size-40: 4rem;
+            
+            /* Line heights */
+            --line-height-18: 1.8rem;
+            --line-height-21: 2.1rem;
+            --line-height-24: 2.4rem;
+            --line-height-28: 2.8rem;
+            --line-height-30: 3rem;
+            --line-height-34: 3.4rem;
+            --line-height-38: 3.8rem;
+            
+            /* Font weights */
+            --font-weight-regular: 400;
+            --font-weight-medium: 500;
+            --font-weight-semibold: 600;
+            --font-weight-bold: 700;
+            
+            /* Spacing */
+            --space-10: 1rem;
+            --space-20: 2rem;
+            --space-30: 3rem;
+            --space-40: 4rem;
+            --space-60: 6rem;
+            
+            /* Container widths */
+            --container-width-small: 680px;
+            --container-width-medium: 960px;
+        }
+
+        html {
+            font-size: 62.5%;
+            box-sizing: border-box;
+        }
+
+        *, *:before, *:after {
+            box-sizing: inherit;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: var(--font-family-base);
+            font-size: var(--font-size-16);
+            line-height: var(--line-height-24);
+            color: var(--color-gray-90);
+            background-color: var(--color-white);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: var(--container-width-medium);
+            margin: 0 auto;
+            padding: 0 var(--space-20);
+        }
+
+        .header {
+            background-color: var(--color-white);
+            border-bottom: 1px solid var(--color-gray-15);
+            padding: var(--space-20) 0;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            height: 50px;
+        }
+
+        .main {
+            padding: var(--space-60) 0;
+        }
+
+        .section {
+            margin-bottom: var(--space-40);
+        }
+
+        h1 {
+            font-family: var(--font-family-display);
+            font-size: var(--font-size-34);
+            line-height: var(--line-height-38);
+            font-weight: var(--font-weight-regular);
+            margin: 0 0 var(--space-20) 0;
+        }
+
+        h2 {
+            font-family: var(--font-family-display);
+            font-size: var(--font-size-24);
+            line-height: var(--line-height-30);
+            font-weight: var(--font-weight-regular);
+            margin: var(--space-30) 0 var(--space-20) 0;
+        }
+
+        p {
+            margin: var(--space-20) 0;
+        }
+
+        .opt-out-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-20);
+            margin: var(--space-30) 0;
+        }
+
+        .opt-out-card {
+            flex: 1 1 300px;
+            border: 1px solid var(--color-gray-15);
+            border-radius: 8px;
+            padding: var(--space-20);
+            background-color: var(--color-white);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .opt-out-card:hover {
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .opt-out-card h3 {
+            font-size: var(--font-size-20);
+            line-height: var(--line-height-28);
+            font-weight: var(--font-weight-medium);
+            margin: 0 0 var(--space-10) 0;
+        }
+
+        .button {
+            display: inline-block;
+            font-weight: var(--font-weight-medium);
+            text-align: center;
+            vertical-align: middle;
+            cursor: pointer;
+            padding: 12px 24px;
+            font-size: var(--font-size-16);
+            line-height: var(--line-height-24);
+            border-radius: 6px;
+            transition: all 0.2s ease-in-out;
+            text-decoration: none;
+            margin-top: var(--space-20);
+        }
+
+        .button-primary {
+            background-color: var(--color-blue);
+            color: var(--color-white);
+            border: 1px solid var(--color-blue);
+        }
+
+        .button-primary:hover {
+            background-color: var(--color-blue-dark);
+            border-color: var(--color-blue-dark);
+        }
+
+        .button-secondary {
+            background-color: var(--color-white);
+            color: var(--color-blue);
+            border: 1px solid var(--color-blue);
+        }
+
+        .button-secondary:hover {
+            background-color: var(--color-gray-03);
+        }
+
+        .privacy-icon {
+            width: 48px;
+            height: 48px;
+            margin-bottom: var(--space-10);
+        }
+
+        .footer {
+            background-color: var(--color-gray-05);
+            padding: var(--space-40) 0;
+            margin-top: var(--space-60);
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-20);
+        }
+
+        .footer-links a {
+            color: var(--color-gray-55);
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: var(--color-gray-75);
+        }
+
+        .privacy-choices-icon {
+            display: inline-block;
+            width: 31px;
+            height: 15px;
+            background-image: url("data:image/svg+xml,%3Csvg width='31' height='15' viewBox='0 0 31 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.5 0C3.36 0 0 3.36 0 7.5C0 11.64 3.36 15 7.5 15C11.64 15 15 11.64 15 7.5C15 3.36 11.64 0 7.5 0ZM7.5 13C4.46 13 2 10.54 2 7.5C2 4.46 4.46 2 7.5 2C10.54 2 13 4.46 13 7.5C13 10.54 10.54 13 7.5 13Z' fill='%23006AFF'/%3E%3Cpath d='M23.5 0C19.36 0 16 3.36 16 7.5C16 11.64 19.36 15 23.5 15C27.64 15 31 11.64 31 7.5C31 3.36 27.64 0 23.5 0ZM23.5 13C20.46 13 18 10.54 18 7.5C18 4.46 20.46 2 23.5 2C26.54 2 29 4.46 29 7.5C29 10.54 26.54 13 23.5 13Z' fill='%23006AFF'/%3E%3Cpath d='M7.5 4.5C5.84 4.5 4.5 5.84 4.5 7.5C4.5 9.16 5.84 10.5 7.5 10.5C9.16 10.5 10.5 9.16 10.5 7.5C10.5 5.84 9.16 4.5 7.5 4.5Z' fill='%23006AFF'/%3E%3C/svg%3E");
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+
+        @media (min-width: 768px) {
+            h1 {
+                font-size: var(--font-size-40);
+                line-height: 1.2;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .opt-out-options {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container header-content">
+            <a href="https://squareup.com">
+                <img src="https://cdn.logojoy.com/wp-content/uploads/20220503143620/square-logo-600x333.png" alt="Square" class="logo">
+            </a>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <section class="section">
+                <h1>Opt-Out of Sharing My Personal Information</h1>
+                <p>We respect your privacy and are committed to protecting your personal information. Depending on your jurisdiction, you may have the right to request that we refrain from sharing your personal information with third parties for purposes of targeted advertising.</p>
+                <p>If you wish to exercise your right to opt-out, we have different opt-out processes depending on your relationship with us:</p>
+            </section>
+
+            <section class="section">
+                <div class="opt-out-options">
+                    <div class="opt-out-card">
+                        <svg class="privacy-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                        <h3>For Square Sellers and Website Visitors</h3>
+                        <p>If you use Square services in your business, have visited our website, or have applied or signed up for a Square account, please click this option to manage your opt-out preferences.</p>
+                        <a href="#" class="button button-primary">Seller Opt-Out</a>
+                    </div>
+
+                    <div class="opt-out-card">
+                        <svg class="privacy-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                        <h3>For Customers</h3>
+                        <p>If you are a consumer shopping at a business that uses Square, and have interacted with Square through any of our services—whether by providing information to receive a digital receipt or marketing messages, creating a Square Profile Account; signing up for Square Pay, or interacted with Square as a consumer in any other way, please click the "Customer Opt-Out" button here.</p>
+                        <a href="#" class="button button-primary">Customer Opt-Out</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Additional Information</h2>
+                <p>For more detailed information, please refer to the following privacy notices:</p>
+                <ul>
+                    <li><a href="https://squareup.com/legal/privacy-policy">Privacy Policy for Square Sellers and Website Visitors</a></li>
+                    <li><a href="https://squareup.com/legal/buyer-privacy">Square Profile Privacy Notice for Buyer Features and Square Pay</a></li>
+                    <li><a href="https://squareup.com/legal/privacy-no-account">Privacy Notice for Users Who Do Not Apply or Sign Up for a Square Account or Other Services</a></li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <h2>About the Afterpay Media Network</h2>
+                <p>The Afterpay Media Network (AMN) is a service that allows advertisers to reach consumers with relevant offers based on their shopping habits. When you make a purchase at a business that uses Square and receive a digital receipt, your transaction data may be used to help deliver more relevant advertising to you.</p>
+                <p>By opting out, you are requesting that Square not share your personal information with third parties for targeted advertising purposes through the Afterpay Media Network.</p>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="https://squareup.com/legal/privacy">Privacy Policy</a>
+                <a href="https://squareup.com/legal/terms">Terms of Service</a>
+                <a href="https://squareup.com/help">Help Center</a>
+                <a href="https://squareup.com/legal/privacy-no-account">
+                    <span class="privacy-choices-icon"></span>Your Privacy Choices
+                </a>
+            </div>
+            <p>&copy; 2025 Block, Inc.</p>
+        </div>
+    </footer>
+    <script src="prototype-script.js"></script>
+</body>
+</html>

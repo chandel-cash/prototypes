@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Square - Homepage</title>
+    <link rel="stylesheet" href="https://square-fonts-production-f.squarecdn.com/square-sans.min.css">
+    <style>
+        :root {
+            /* Colors */
+            --color-blue: #006aff;
+            --color-blue-dark: #05c;
+            --color-white: #fff;
+            --color-gray-03: #f7f7f7;
+            --color-gray-05: #f2f2f2;
+            --color-gray-13: #e0e0e0;
+            --color-gray-15: #d9d9d9;
+            --color-gray-30: #b3b3b3;
+            --color-gray-55: #737373;
+            --color-gray-75: #414141;
+            --color-gray-80: #333;
+            --color-gray-90: #1a1a1a;
+            --color-gray-93: #121212;
+            --color-gray-99: #030303;
+            --color-black: var(--color-gray-99);
+
+            /* Fonts */
+            --font-family-base: "Square Sans Text VF", "Square Sans Text", Helvetica, Arial, sans-serif;
+            --font-family-display: "Square Sans Display VF", "Square Sans Display", Helvetica, Arial, sans-serif;
+            
+            /* Font sizes */
+            --font-size-12: 1.2rem;
+            --font-size-14: 1.4rem;
+            --font-size-16: 1.6rem;
+            --font-size-18: 1.8rem;
+            --font-size-20: 2rem;
+            --font-size-24: 2.4rem;
+            --font-size-28: 2.8rem;
+            --font-size-34: 3.4rem;
+            --font-size-40: 4rem;
+            
+            /* Line heights */
+            --line-height-18: 1.8rem;
+            --line-height-21: 2.1rem;
+            --line-height-24: 2.4rem;
+            --line-height-28: 2.8rem;
+            --line-height-30: 3rem;
+            --line-height-34: 3.4rem;
+            --line-height-38: 3.8rem;
+            
+            /* Font weights */
+            --font-weight-regular: 400;
+            --font-weight-medium: 500;
+            --font-weight-semibold: 600;
+            --font-weight-bold: 700;
+            
+            /* Spacing */
+            --space-10: 1rem;
+            --space-20: 2rem;
+            --space-30: 3rem;
+            --space-40: 4rem;
+            --space-60: 6rem;
+            
+            /* Container widths */
+            --container-width-small: 680px;
+            --container-width-medium: 960px;
+            --container-width-large: 1200px;
+        }
+
+        html {
+            font-size: 62.5%;
+            box-sizing: border-box;
+        }
+
+        *, *:before, *:after {
+            box-sizing: inherit;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: var(--font-family-base);
+            font-size: var(--font-size-16);
+            line-height: var(--line-height-24);
+            color: var(--color-gray-90);
+            background-color: var(--color-white);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            max-width: var(--container-width-large);
+            margin: 0 auto;
+            padding: 0 var(--space-20);
+            width: 100%;
+        }
+
+        .header {
+            background-color: var(--color-white);
+            border-bottom: 1px solid var(--color-gray-15);
+            padding: var(--space-20) 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            height: 24px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: var(--space-30);
+        }
+
+        .nav-links a {
+            color: var(--color-gray-90);
+            text-decoration: none;
+            font-weight: var(--font-weight-medium);
+        }
+
+        .nav-links a:hover {
+            color: var(--color-blue);
+        }
+
+        .main {
+            flex: 1;
+            padding: var(--space-60) 0;
+        }
+
+        .hero {
+            text-align: center;
+            margin-bottom: var(--space-60);
+        }
+
+        .hero h1 {
+            font-family: var(--font-family-display);
+            font-size: var(--font-size-40);
+            line-height: 1.2;
+            font-weight: var(--font-weight-regular);
+            margin: 0 0 var(--space-20) 0;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero p {
+            font-size: var(--font-size-20);
+            line-height: var(--line-height-30);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .button {
+            display: inline-block;
+            font-weight: var(--font-weight-medium);
+            text-align: center;
+            vertical-align: middle;
+            cursor: pointer;
+            padding: 12px 24px;
+            font-size: var(--font-size-16);
+            line-height: var(--line-height-24);
+            border-radius: 6px;
+            transition: all 0.2s ease-in-out;
+            text-decoration: none;
+            margin-top: var(--space-20);
+        }
+
+        .button-primary {
+            background-color: var(--color-blue);
+            color: var(--color-white);
+            border: 1px solid var(--color-blue);
+        }
+
+        .button-primary:hover {
+            background-color: var(--color-blue-dark);
+            border-color: var(--color-blue-dark);
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-30);
+            margin-bottom: var(--space-60);
+        }
+
+        .feature {
+            background-color: var(--color-gray-03);
+            padding: var(--space-20);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .feature h3 {
+            font-size: var(--font-size-20);
+            margin-top: var(--space-10);
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            margin: 0 auto var(--space-10);
+        }
+
+        .footer {
+            background-color: var(--color-gray-99);
+            color: var(--color-white);
+            padding: var(--space-40) 0;
+            margin-top: auto;
+            font-size: var(--font-size-14);
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: right;
+        }
+
+        .footer-links li {
+            margin-bottom: var(--space-10);
+        }
+
+        .footer-links a {
+            color: var(--color-gray-30);
+            text-decoration: none;
+            font-size: var(--font-size-14);
+        }
+
+        .footer-links a:hover {
+            color: var(--color-white);
+            text-decoration: underline;
+        }
+
+        .copyright {
+            color: var(--color-gray-55);
+            font-size: var(--font-size-14);
+            text-align: right;
+            margin-top: var(--space-20);
+        }
+
+        .privacy-choices-icon {
+            display: inline-block;
+            width: 31px;
+            height: 15px;
+            background-image: url("data:image/svg+xml,%3Csvg width='31' height='15' viewBox='0 0 31 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.5 0C3.36 0 0 3.36 0 7.5C0 11.64 3.36 15 7.5 15C11.64 15 15 11.64 15 7.5C15 3.36 11.64 0 7.5 0ZM7.5 13C4.46 13 2 10.54 2 7.5C2 4.46 4.46 2 7.5 2C10.54 2 13 4.46 13 7.5C13 10.54 10.54 13 7.5 13Z' fill='%23006AFF'/%3E%3Cpath d='M23.5 0C19.36 0 16 3.36 16 7.5C16 11.64 19.36 15 23.5 15C27.64 15 31 11.64 31 7.5C31 3.36 27.64 0 23.5 0ZM23.5 13C20.46 13 18 10.54 18 7.5C18 4.46 20.46 2 23.5 2C26.54 2 29 4.46 29 7.5C29 10.54 26.54 13 23.5 13Z' fill='%23006AFF'/%3E%3Cpath d='M7.5 4.5C5.84 4.5 4.5 5.84 4.5 7.5C4.5 9.16 5.84 10.5 7.5 10.5C9.16 10.5 10.5 9.16 10.5 7.5C10.5 5.84 9.16 4.5 7.5 4.5Z' fill='%23006AFF'/%3E%3C/svg%3E");
+            vertical-align: middle;
+            margin-right: 4px;
+            position: relative;
+            top: -1px;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container header-content">
+            <a href="#">
+                <img src="square-logo.png" alt="Square" class="logo">
+            </a>
+            <nav class="nav-links">
+                <a href="#">Products</a>
+                <a href="#">Solutions</a>
+                <a href="#">Developers</a>
+                <a href="#">Resources</a>
+                <a href="#">Pricing</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <section class="hero">
+                <h1>Payments and more for your business—all in one place</h1>
+                <p>Square helps you run your business. From payments to point of sale, we have all kinds of solutions for you.</p>
+                <a href="#" class="button button-primary">Get Started</a>
+            </section>
+
+            <section class="features">
+                <div class="feature">
+                    <svg class="feature-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                        <line x1="1" y1="10" x2="23" y2="10"></line>
+                    </svg>
+                    <h3>Accept Payments</h3>
+                    <p>Accept every payment quickly and securely, whether you're in-store or online.</p>
+                </div>
+                <div class="feature">
+                    <svg class="feature-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" y1="8" x2="12" y2="12"></line>
+                        <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                    </svg>
+                    <h3>Point of Sale</h3>
+                    <p>Powerful point-of-sale software that helps you sell, manage inventory, and more.</p>
+                </div>
+                <div class="feature">
+                    <svg class="feature-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="9" cy="7" r="4"></circle>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>
+                    <h3>Team Management</h3>
+                    <p>Tools to help you manage and pay your team, track performance, and more.</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <ul class="footer-links">
+                <li><a href="#">English (United States)</a></li>
+                <li><a href="#">Accessibility</a></li>
+                <li><a href="#">Privacy</a></li>
+                <li><a href="#">Cookies</a></li>
+                <li><a href="#">Legal</a></li>
+                <li><a href="#">Licenses</a></li>
+                <li><a href="#">Cookie Settings</a></li>
+                <li><a href="amn-opt-out-prototype-alt.html">
+                    <span class="privacy-choices-icon"></span>Your Privacy Choices
+                </a></li>
+                <li><a href="amn-opt-out-prototype.html">Do Not Share My Personal Information</a></li>
+                <li class="copyright">© 2025 Block, Inc.</li>
+            </ul>
+        </div>
+    </footer>
+    <script src="prototype-script.js"></script>
+</body>
+</html>
