@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction Details</title>
+    <link rel="stylesheet" href="./assets/styles.css">
+    <link rel="stylesheet" href="./assets/transaction-detail.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div class="transaction-detail">
+        <!-- iOS Status Bar -->
+        <div class="bg-white h-11 flex items-center justify-between px-4">
+            <div class="text-sm font-medium">9:41</div>
+            <div class="flex items-center gap-1">
+                <div class="signal-bars">
+                    <div class="signal-bar signal-bar-1"></div>
+                    <div class="signal-bar signal-bar-2"></div>
+                    <div class="signal-bar signal-bar-3"></div>
+                    <div class="signal-bar signal-bar-4"></div>
+                </div>
+                <div class="ml-1 text-xs font-medium">5G</div>
+                <div class="battery-indicator">78%</div>
+            </div>
+        </div>
+
+        <!-- Back Button -->
+        <div class="back-button">
+            <a href="./direct-deposit.html" class="flex items-center text-black">
+                <i data-lucide="chevron-left" class="h-6 w-6"></i>
+            </a>
+        </div>
+
+        <!-- Transaction Icon -->
+        <div class="transaction-icon bg-[#34C759]">
+            <i data-lucide="dollar-sign"></i>
+        </div>
+
+        <!-- Transaction Header -->
+        <h1 class="transaction-title">Direct deposit</h1>
+        <div class="transaction-date">Nov 21 at 12:00 PM</div>
+        <div class="transaction-amount positive">+ $880.00</div>
+
+        <!-- Transaction Details -->
+        <h2 class="section-title">Transaction details</h2>
+        
+        <div class="detail-item">
+            <i data-lucide="check" class="detail-icon"></i>
+            <div class="detail-content">
+                <div class="detail-label">Complete</div>
+                <div class="detail-value">Paycheck deposited to Cash balance</div>
+            </div>
+        </div>
+
+        <div class="detail-item">
+            <i data-lucide="calendar" class="detail-icon"></i>
+            <div class="detail-content">
+                <div class="detail-label">Date & time</div>
+                <div class="detail-value">November 23, 2023 at 8:30 PM PST</div>
+            </div>
+        </div>
+
+        <div class="detail-item">
+            <i data-lucide="building" class="detail-icon"></i>
+            <div class="detail-content">
+                <div class="detail-label">Payment source</div>
+                <div class="detail-value">Block, Inc. Payroll</div>
+            </div>
+        </div>
+
+        <div class="detail-item">
+            <i data-lucide="dollar-sign" class="detail-icon"></i>
+            <div class="detail-content">
+                <div class="detail-label">Amount</div>
+                <div class="detail-value">$880.00</div>
+            </div>
+        </div>
+
+        <div class="detail-item">
+            <i data-lucide="map-pin" class="detail-icon"></i>
+            <div class="detail-content">
+                <div class="detail-label">Location</div>
+                <div class="detail-value">CVS</div>
+                <div class="detail-value">2452 E Springs Dr</div>
+            </div>
+            <button class="action-button">Open map</button>
+        </div>
+    </div>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>

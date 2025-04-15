@@ -69,10 +69,11 @@
             {
                 id: 1,
                 name: "Direct deposit",
-                description: "Acme Corp Payroll",
-                date: "Yesterday",
-                amount: 75,
-                total: 150
+                description: "Block, Inc. Payroll",
+                date: "Nov 21",
+                amount: 880,
+                total: 880,
+                detailUrl: "./transactions/direct-deposit-1.html"
             },
             {
                 id: 2,
@@ -80,7 +81,8 @@
                 description: "Side Gig Payment",
                 date: "Apr 10",
                 amount: 35,
-                total: 75
+                total: 75,
+                detailUrl: "#"
             },
             {
                 id: 3,
@@ -88,7 +90,8 @@
                 description: "Tax Refund",
                 date: "Apr 5",
                 amount: 40,
-                total: 40
+                total: 40,
+                detailUrl: "#"
             }
         ];
 
@@ -97,7 +100,7 @@
             const container = document.querySelector('.transactions-list');
             transactions.forEach(transaction => {
                 const element = document.createElement('a');
-                element.href = `#transaction-${transaction.id}`;
+                element.href = transaction.detailUrl;
                 element.innerHTML = `
                     <div class="flex items-center px-4 py-4 border-b border-[#E9E9EB]">
                         <div class="bg-[#34C759] h-12 w-12 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
@@ -152,7 +155,7 @@
 
             filteredTransactions.forEach(transaction => {
                 const element = document.createElement('a');
-                element.href = `#transaction-${transaction.id}`;
+                element.href = transaction.detailUrl;
                 element.innerHTML = `
                     <div class="flex items-center px-4 py-4 border-b border-[#E9E9EB]">
                         <div class="bg-[#34C759] h-12 w-12 rounded-full flex items-center justify-center mr-3 flex-shrink-0">

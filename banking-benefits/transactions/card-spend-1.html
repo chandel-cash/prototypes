@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Spend Details</title>
+    <link rel="stylesheet" href="../assets/styles.css">
+    <link rel="stylesheet" href="../assets/transaction-detail.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div class="transaction-detail">
+        <!-- iOS Status Bar -->
+        <div class="bg-white h-11 flex items-center justify-between px-4">
+            <div class="text-sm font-medium">9:41</div>
+            <div class="flex items-center gap-1">
+                <div class="signal-bars">
+                    <div class="signal-bar signal-bar-1"></div>
+                    <div class="signal-bar signal-bar-2"></div>
+                    <div class="signal-bar signal-bar-3"></div>
+                    <div class="signal-bar signal-bar-4"></div>
+                </div>
+                <div class="ml-1 text-xs font-medium">5G</div>
+                <div class="battery-indicator">78%</div>
+            </div>
+        </div>
+
+        <!-- Back Button -->
+        <div class="back-button">
+            <a href="../card-spend.html" class="flex items-center text-black">
+                <i data-lucide="chevron-left" class="h-6 w-6"></i>
+            </a>
+        </div>
+
+        <!-- Transaction Icon -->
+        <div class="transaction-icon bg-green-500">
+            <i data-lucide="shopping-cart"></i>
+        </div>
+
+        <!-- Transaction Header -->
+        <h1 class="transaction-title">Whole Foods Market</h1>
+        <div class="transaction-date">Yesterday at 2:15 PM</div>
+        <div class="transaction-amount">$78.35</div>
+
+        <!-- Transaction Details -->
+        <h2 class="section-title">Transaction details</h2>
+        
+        <div class="detail-item">
+            <i data-lucide="check" class="detail-icon"></i>
+            <div class="detail-content">
+                <div class="detail-label">Complete</div>
+                <div class="detail-value">Card payment processed</div>
+            </div>
+        </div>
+
+        <div class="detail-item">
+            <i data-lucide="calendar" class="detail-icon"></i>
+            <div class="detail-content">
+                <div class="detail-label">Date & time</div>
+                <div class="detail-value">April 14, 2023 at 2:15 PM PST</div>
+            </div>
+        </div>
+
+        <div class="detail-item">
+            <i data-lucide="credit-card" class="detail-icon"></i>
+            <div class="detail-content">
+                <div class="detail-label">Payment method</div>
+                <div class="detail-value">Cash Card •••• 4242</div>
+            </div>
+        </div>
+
+        <div class="detail-item">
+            <i data-lucide="dollar-sign" class="detail-icon"></i>
+            <div class="detail-content">
+                <div class="detail-label">Amount</div>
+                <div class="detail-value">$78.35</div>
+            </div>
+        </div>
+
+        <div class="detail-item">
+            <i data-lucide="tag" class="detail-icon"></i>
+            <div class="detail-content">
+                <div class="detail-label">Category</div>
+                <div class="detail-value">Groceries</div>
+            </div>
+        </div>
+
+        <div class="detail-item">
+            <i data-lucide="map-pin" class="detail-icon"></i>
+            <div class="detail-content">
+                <div class="detail-label">Location</div>
+                <div class="detail-value">Whole Foods Market</div>
+                <div class="detail-value">123 Market Street, San Francisco, CA</div>
+            </div>
+            <button class="action-button">Open map</button>
+        </div>
+    </div>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>

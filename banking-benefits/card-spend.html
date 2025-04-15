@@ -74,7 +74,8 @@
                 amount: 78.35,
                 icon: "shopping-cart",
                 color: "bg-green-500",
-                total: 223.00
+                total: 223.00,
+                detailUrl: "./transactions/card-spend-1.html"
             },
             {
                 id: 2,
@@ -84,7 +85,8 @@
                 amount: 5.45,
                 icon: "coffee",
                 color: "bg-blue-500",
-                total: 144.65
+                total: 144.65,
+                detailUrl: "#"
             },
             {
                 id: 3,
@@ -94,7 +96,8 @@
                 amount: 42.99,
                 icon: "shopping-cart",
                 color: "bg-orange-500",
-                total: 139.20
+                total: 139.20,
+                detailUrl: "#"
             },
             {
                 id: 4,
@@ -104,7 +107,8 @@
                 amount: 18.75,
                 icon: "dollar-sign",
                 color: "bg-purple-500",
-                total: 96.21
+                total: 96.21,
+                detailUrl: "#"
             },
             {
                 id: 5,
@@ -114,7 +118,8 @@
                 amount: 12.50,
                 icon: "utensils",
                 color: "bg-red-500",
-                total: 77.46
+                total: 77.46,
+                detailUrl: "#"
             },
             {
                 id: 6,
@@ -124,7 +129,8 @@
                 amount: 64.96,
                 icon: "shopping-cart",
                 color: "bg-red-500",
-                total: 64.96
+                total: 64.96,
+                detailUrl: "#"
             }
         ];
 
@@ -133,7 +139,7 @@
             const container = document.querySelector('.transactions-list');
             transactions.forEach(transaction => {
                 const element = document.createElement('a');
-                element.href = `#transaction-${transaction.id}`;
+                element.href = transaction.detailUrl;
                 element.innerHTML = `
                     <div class="flex items-center px-4 py-4 border-b border-[#E9E9EB]">
                         <div class="${transaction.color} h-12 w-12 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
@@ -188,7 +194,7 @@
 
             filteredTransactions.forEach(transaction => {
                 const element = document.createElement('a');
-                element.href = `#transaction-${transaction.id}`;
+                element.href = transaction.detailUrl;
                 element.innerHTML = `
                     <div class="flex items-center px-4 py-4 border-b border-[#E9E9EB]">
                         <div class="${transaction.color} h-12 w-12 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
