@@ -32,6 +32,16 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+/* Remove default link styles */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: inherit;
+}
+
 /* Utility classes */
 .flex { display: flex; }
 .flex-1 { flex: 1 1 0%; }
